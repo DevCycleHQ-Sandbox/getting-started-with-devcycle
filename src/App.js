@@ -7,10 +7,9 @@ import { useVariable } from '@devcycle/devcycle-react-sdk' // from the docs
 import { asyncWithDVCProvider } from '@devcycle/devcycle-react-sdk';
 
 (async () => {
-    const ENV_KEY = 'client-8d9f7840-818a-4df4-a797-2c637e466b75' // create a variable for the environment key to
-                                                                  // prevent issues with a typo
+    const ENV_KEY = 'CLIENT_KEY_HERE' // create a variable for the environment key to prevent issues with a typo
     const user = {
-        user_id: 'bob',
+        user_id: 'user1',
         email: 'user@taplytics.com'
     }
     const DVCProvider = await asyncWithDVCProvider({ envKey: ENV_KEY, user: user  })
