@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './App.css';
-import { useVariable } from '@devcycle/devcycle-react-sdk' // from the docs
 
-// based on the example usage on the dashboard, but this is updated for React 18
-import { asyncWithDVCProvider } from '@devcycle/devcycle-react-sdk';
+// based on the 'Example Usage'section on the dashboard, updated for React 18
+import { asyncWithDVCProvider, useVariable} from '@devcycle/devcycle-react-sdk';
 
 (async () => {
-    const ENV_KEY = 'CLIENT_KEY_HERE' // create a variable for the environment key to prevent issues with a typo
+    const ENV_KEY = 'YOUR_KEY_HERE' // create a variable for the environment key to prevent issues with a typo
     const user = {
         user_id: 'user1',
         email: 'user@taplytics.com'
@@ -26,7 +25,7 @@ import { asyncWithDVCProvider } from '@devcycle/devcycle-react-sdk';
 })()
 
 const App = () => {
-    const variableKey = 'new-react-feature'
+    const variableKey = 'first-feature'
     const defaultValue = false
     const featureVariable = useVariable(variableKey, defaultValue)
 
@@ -35,39 +34,14 @@ const App = () => {
         <div class="container">
         <div id="welcome">
           <h2> 
-            <span>{featureVariable.value ? 'Variable on!' : 'Variable off'}</span> 
-          </h2>
+            <span>
+              {featureVariable.value ? 'Variable on!' /* Your feature goes here! */ : 'Variable off' }
+            </span> 
+          </h2> 
         </div>
         </div>  
-      </div>
+      </div> 
     )
 }
-
-// import { asyncWithDVCProvider, useVariable } from '@devcycle/devcycle-react-sdk'
-
-// (async () => {
-//   const user = {
-//       user_id: 'my_user_id'
-//   }
-//   const DVCProvider = await asyncDVCProvider({ envKey: 'client-8d9f7840-818a-4df4-a797-2c637e466b75', user })
-
-//   render(
-//       <DVCProvider>
-//           <App />
-//       </DVCProvider>
-//   )
-// })();
-
-// const App = () => {
-//     const variableKey = 'new-react-feature'
-//     const defaultValue = false
-//     const featureVariable = useVariable(variableKey, defaultValue)
-
-//     return (
-//         <div>
-//           {featureVariable?.value ? <div>Variable on!</div> : <div>Variable off</div>}
-//         </div>
-//     )
-// }
 
 export default App;
