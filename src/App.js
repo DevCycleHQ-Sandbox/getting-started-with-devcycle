@@ -8,8 +8,8 @@ import { asyncWithDVCProvider, useVariable} from '@devcycle/devcycle-react-sdk';
 (async () => {
     const ENV_KEY = 'YOUR_KEY_HERE' // create a variable for the environment key to prevent issues with a typo
     const user = {
-        user_id: 'user1',
-        email: 'user@taplytics.com'
+        user_id: 'my_user_id',
+        email: 'user@devcycle.com'
     }
     const DVCProvider = await asyncWithDVCProvider({ envKey: ENV_KEY, user: user  })
     const root = ReactDOM.createRoot(document.getElementById('root'));
